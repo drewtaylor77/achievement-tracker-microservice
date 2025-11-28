@@ -25,7 +25,7 @@ All requests must be in valid JSON format.
 2. Create a socket w/ the context & establish connection on the host and port with 'socket = context.socket(zmq.REQ)'
    * connection is currently set to target "tcp://localhost:5555"
 3. Create a valid JSON object in a format listed in the table above.
-4. Send the string quote via 'socket.send_json()'
+4. Send the request via 'socket.send_json()'
 
 #### Example Request
 ```python
@@ -46,7 +46,7 @@ socket.send_json({'request': 'get_achievements', 'user_id': 'user1'})
 
 ### Receiving a Response
 
-After having received the request, assign a variable equal to 'socket.recv()'; it will generate a quote and send it back to the client.
+After having received the request, assign a variable equal to 'socket.recv()'; it will generate a reply and send it back to the client.
 
 #### Example of Receiving
 ```python
